@@ -2,14 +2,14 @@ import styled from 'styled-components';
 
 export const RulesButton = styled.button`
   border: 0;
-  background: yellow;
+  background: mediumspringgreen;
   border-radius: 5px;
   padding: 0.5rem 1rem;
   font-size: 0.8rem;
   line-height: 1;
   &:hover {
     cursor: pointer;
-    background: green;
+    background: midnightblue;
     color: white;
   };
   &:focus {
@@ -19,6 +19,7 @@ export const RulesButton = styled.button`
 
 export const ModalDiv = styled.div`
   width: 500px;
+  margin-top: -650px;
   background: white;
   border: 1px solid #ccc;
   transition: 1.1s ease-out;
@@ -57,4 +58,26 @@ export const ModalDiv = styled.div`
       };
     }
   }
+`;
+
+export const CellDiv = styled.div`
+  width: 1px;
+  display: flex;
+  flex: 1;
+  padding: 10px;
+  margin: 1px;
+  border: 1px solid mediumspringgreen;
+  background: midnightblue;
+`;
+
+export const RowDiv = styled.div`
+  display: flex;
+`;
+
+export const GridDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 50px;
+  margin: 0 auto;
 `;
