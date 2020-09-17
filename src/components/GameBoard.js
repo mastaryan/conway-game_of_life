@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-
 import Grid from './Grid';
 import BoardControls from './BoardControls';
 import Rules from './Rules';
+import { RulesButton } from './Styles';
 
 class GameBoard extends Component {
   state = {
-    open: false
+    open: false,
+    size: [25, 25]
   }
 
   openModal = () => {
@@ -22,13 +22,13 @@ class GameBoard extends Component {
     return (
       <div>
         <h1>Conway's Game of Life</h1>
-        <button onClick={this.openModal}>Rules</button>
-        <Grid />
-        <BoardControls />
+        <RulesButton onClick={this.openModal}>Rules</RulesButton>
+        <Grid size={this.state.size} />
+        <BoardControls size={this.state.size} />
         <Rules open={this.state.open} closeModal={this.closeModal} />
       </div>
     );
   }
 }
 
-export default connect(null, {})(GameBoard);
+export default GameBoard;
