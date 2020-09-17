@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 
 class Grid extends Component {
+  renderGrid = () => {
+
+  }
+
   render() {
     return (
       <div>
-
+        <h4>Generation: </h4>
+        <div>
+          {this.renderGrid()}
+        </div>
       </div>
     );
   }
 }
 
-export default connect(null, {})(Grid);
+export default Grid;
