@@ -20,7 +20,6 @@ class Evolution extends Component {
     return this.state.liveCells.has(key);
   };
 
-   // TODO: condense into one function
   calculateLiveNeighbors = (cell) => {
     var numAlive = 0;
 

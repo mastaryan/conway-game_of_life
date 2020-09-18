@@ -3,7 +3,7 @@ import { ModalDiv } from './Styles';
 
 class Rules extends Component {
   closeModal = (e) => {
-    this.props.closeModal && this.props.closeModal(e)
+    this.props.closeModal && this.props.closeModal(e);
   };
 
   render() {
@@ -21,7 +21,7 @@ class Rules extends Component {
             <li>Any dead cell with three live neighbors becomes a live cell</li>
             <li>Any live cell with less than two live neighbors, or more than three live neighbors, dies</li>
           </ul>
-          <p>To play, create an initial pattern on the grid, then click <strong>Start</strong> to watch the life cycle evolve. Alternatively, use the <strong>Random</strong> button to generate a random starting configuration of cells, or choose from a predefined configuration.</p>
+          <p>To play, create an initial pattern on the grid, then click <strong>Start</strong> to watch the life cycle evolve. Alternatively, choose from a predefined configuration.</p>
           <p>Use the speed boxes to determine how fast, or slow, the animation will play. To see a configuration at a certain generation, hit the <strong>Stop</strong> button. Use the <strong>Clear</strong> button to restart.</p>
         </div>
         <div className="playBtn">
@@ -29,7 +29,7 @@ class Rules extends Component {
         </div>
       </ModalDiv>
     );
-  }
-}
+  };
+};
 
 export default Rules;
