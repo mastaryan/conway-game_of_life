@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Cell from './Cell';
 import BoardControls from './BoardControls';
 import Evolution from './Evolution';
-import { GridDiv } from './Styles';
+import { RowDiv, GridDiv, InputContainer, InputDiv, Inputs, Labels } from './Styles';
 
 class Grid extends Component {
   state = {
@@ -13,7 +13,7 @@ class Grid extends Component {
     evolution: new Evolution()
   };
 
-   renderGrid = () => {
+  renderGrid = () => {
     var grid = []
     var row = []
   
@@ -26,6 +26,7 @@ class Grid extends Component {
         };
       };
   
+      grid.push(<RowDiv key={i}>{row}</RowDiv>)
       row = []
     };
   
@@ -75,6 +76,7 @@ class Grid extends Component {
   };
 
   clearGrid = () => {
+    // Turn all cells to dead - condense functions first for easier rendering
     console.log('Cleared');
   };
 
@@ -93,29 +95,29 @@ class Grid extends Component {
         <GridDiv>
           {this.renderGrid()}
         </GridDiv>
-        <div>
-          <div>
-            <label>Columns</label>
-            <input
+        <InputContainer>
+          <InputDiv>
+            <Labels>Columns</Labels>
+            <Inputs
               type="text"
               value={this.state.size[0]}
               onChange={this.handleColumnChange} />
-          </div>
-          <div>
-            <label>Rows</label>
-            <input
+          </InputDiv>
+          <InputDiv>
+            <Labels>Rows</Labels>
+            <Inputs
               type="text"
               value={this.state.size[1]}
               onChange={this.handleRowChange} />
-          </div>
-          <div>
-            <label>Animation Speed</label>
-            <input
+          </InputDiv>
+          <InputDiv>
+            <Labels>Animation Speed</Labels>
+            <Inputs
               type="text"
               value={this.state.interval}
               onChange={this.handleIntervalChange} />
-          </div>
-        </div>
+          </InputDiv>
+        </InputContainer>
         <BoardControls startGame={this.startGame} stopGame={this.stopGame} clearGrid={this.clearGrid} />
         <Evolution generation={this.state.generation} advanceGeneration={this.advanceGeneration} />
       </div>
